@@ -1383,20 +1383,20 @@
     box-shadow: 0 12px 35px rgba(0, 210, 255, 0.35);
   }
 
-  #ask-praveen-ai-window {
-    display: none;
-    position: fixed;
-    right: 24px;
-    bottom: 88px;
-    width: 390px;
-    height: 720px;
-    z-index: 99998;
-    background: #0b0e1a;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 18px;
-    overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
-  }
+ #ask-praveen-ai-window {
+  display: none;
+  position: fixed;
+  right: 24px;
+  bottom: 88px;
+  width: min(430px, calc(100vw - 20px));
+  height: min(760px, calc(100vh - 110px));
+  z-index: 99998;
+  background: #0b0e1a;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+}
 
   #ask-praveen-ai-window iframe {
     width: 100%;
@@ -1405,13 +1405,14 @@
     display: block;
   }
 
-  @media (max-width: 600px) {
-    #ask-praveen-ai-window {
-      right: 10px;
-      bottom: 80px;
-      width: calc(100vw - 20px);
-      height: 75vh;
-    }
+  #ask-praveen-ai-window {
+  right: 10px;
+  bottom: 72px;
+  width: calc(100vw - 20px);
+  height: calc(100vh - 92px);
+  max-height: none;
+  border-radius: 16px;
+}
 
     #ask-praveen-ai-button {
       right: 16px;
