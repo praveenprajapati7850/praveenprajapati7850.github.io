@@ -1358,5 +1358,100 @@
             });
         });
     </script>
+    <!-- ASK PRAVEEN AI WIDGET -->
+<style>
+  #ask-praveen-ai-button {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 99999;
+    border: none;
+    border-radius: 50px;
+    padding: 14px 20px;
+    background: linear-gradient(135deg, #6c5ce7, #00d2ff);
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 30px rgba(0, 210, 255, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  #ask-praveen-ai-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(0, 210, 255, 0.35);
+  }
+
+  #ask-praveen-ai-window {
+    display: none;
+    position: fixed;
+    right: 24px;
+    bottom: 88px;
+    width: 390px;
+    height: 600px;
+    z-index: 99998;
+    background: #0b0e1a;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+  }
+
+  #ask-praveen-ai-window iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+  }
+
+  @media (max-width: 600px) {
+    #ask-praveen-ai-window {
+      right: 10px;
+      bottom: 80px;
+      width: calc(100vw - 20px);
+      height: 75vh;
+    }
+
+    #ask-praveen-ai-button {
+      right: 16px;
+      bottom: 16px;
+      padding: 13px 17px;
+      font-size: 14px;
+    }
+  }
+</style>
+
+<div id="ask-praveen-ai-window">
+  <iframe
+    src="https://ask-praveen-ai.ai.studio"
+    title="Ask Praveen AI"
+    loading="lazy"
+    allow="clipboard-write"
+  ></iframe>
+</div>
+
+<button id="ask-praveen-ai-button" type="button">
+  ✨ Ask Praveen AI
+</button>
+
+<script>
+  const askPraveenButton = document.getElementById("ask-praveen-ai-button");
+  const askPraveenWindow = document.getElementById("ask-praveen-ai-window");
+
+  askPraveenButton.addEventListener("click", function () {
+    const isOpen = askPraveenWindow.style.display === "block";
+
+    if (isOpen) {
+      askPraveenWindow.style.display = "none";
+      askPraveenButton.textContent = "✨ Ask Praveen AI";
+    } else {
+      askPraveenWindow.style.display = "block";
+      askPraveenButton.textContent = "✕ Close AI";
+    }
+  });
+</script>
 </body>
 </html>
+
+
